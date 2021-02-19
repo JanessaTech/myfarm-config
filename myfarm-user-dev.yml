@@ -1,0 +1,31 @@
+#datasource configuration
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://192.168.0.200/myfarm
+        username: juan
+        password: 12345
+        
+    redis:
+        host: 192.168.0.200
+        port: 6379
+        password: 
+        timeout: 30000
+        pool:
+            max-active: 8
+            max-wait: -1
+            max-idle: 8
+            min-idle: 0
+            
+    messages:
+        basename: i18n/message
+
+#mybatis configuration
+mybatis:
+    config-location: classpath:/config/mybatis-config.xml
+    mapper-locations: classpath:/mbg/core/mappers/*.xml
+
+## swagger url will be http://localhost:8080/v1.0/api/swagger-ui.html
+server:
+    servlet:
+        contextPath: /v1.0/api
